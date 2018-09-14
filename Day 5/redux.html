@@ -1,0 +1,143 @@
+Need for redux
+What is reduxRedux components
+Settign up components
+data flow
+react with redux
+demo
+
+
+MVC
+
+
+Need for Redux??
+
+simple -> plain js
+As you start managing dom  v start doing alot of ajax calls and,handle data intereactivity then -> jquery
+
+^ above approach wen becomes very tedious think of REDUX
+State management
+
+As data flow gets more complex -> same data @ mutiple places , large state changes hard to manage
+all state change @ one single place for consistency
+ data flows gets more complex and complicated 
+ 
+ React is jus a view hence to handle data flow we use react.
+
+So to control the data flow we have redux to basically handle data flow architecture
+
+
+
+Redux is a predictabl state container for back bone,ember,angular
+Redux is all about how we store and update our app state
+More sane state management
+React has -> virtual dom
+			synthetic events
+			pure functions
+			
+			Pure functions
+			The function always returns the same result if the same arguments are passed in. It does not depend on any state, or data, change during a program’s execution. It must only depend on its input arguments.
+The function does not produce any observable side effects such as network requests, input and output devices, or data mutation.
+
+
+Pure fucniton
+function priceAfterTax(productPrice) {
+ return (productPrice * 0.20) + productPrice;
+}
+
+Impure
+
+var tax = 20;
+function calculateTax(productPrice) {
+ return (productPrice * (tax/100)) + productPrice; 
+}
+
+these above components help us in manage the
+
+
+Redux simplifies all of our data source to one single store ( cud be componnents or anythign)
+Redux called as store. So now components do not have to rely on multiple places but jus on the store
+
+work flow
+chain of commands
+
+App -> fire action(tells what to do )
+reducer goes and updates our app  based on what we wanted
+
+
+tO WRAP IT UP
+
+THE store is where our app state lives
+
+an action decriebs what changes to be made
+
+the reducer determines what the final state will be for an action
+
+
+Principles of redux
+
+ Your entire app is stored in one location
+ Your state must be readonly and can be modified only through actions
+ you jus specify what the final state shud be
+ 
+ action is the only mechanism to contact store
+ 
+ action can havea a variety of shape
+ but it definately needs a typeproperty
+ 
+ add color ,remove color --> action creators
+ 
+ 
+ Reducer
+ 1. provides access to our stores original state
+ 2. allow s you to inspect the action that was currently fired.
+ 3.allws you to set our apps new store
+ 
+ Reducer -> two args
+ current state, action that was part of invoking it
+ 
+ 
+ Shuld not do these 3
+ mutate it args
+ perform side effects like api call & routing
+ 
+ call non pure function
+ data.now math.random
+ 
+ The way we can see dispatch to store
+ 
+ 
+ 
+ _________________________________________
+ 
+ 
+ Data flow through componenets
+ (top -> bottom) parent to child components 
+ 
+ 
+ One huge implication
+ data is flowing in unicode-bidi
+ child cannot pass to parent
+ or to siblings
+ non parent cannot communicate with each other
+ Infact react does not encourage u to do so.
+ 
+ 
+ Redux offers a solution to storign all your app state in onel place called the sotee
+ 
+ components then dispatch & subscribe
+ 
+ 
+ Principles
+ Single store
+ single immutable store
+ direct comm between components not allowed
+ dispathc & subscription
+ 
+ State is read only
+ only way to muttate state is through actions
+ 
+ Change using pure functions
+ done by reducers
+ 
+ prevate,action type 
+ 
